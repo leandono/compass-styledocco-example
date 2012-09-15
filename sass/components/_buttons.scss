@@ -1,0 +1,48 @@
+// # Compass dependencies
+// * [Images](http://compass-style.org/reference/compass/css3/images/)
+// * [Border Radius](http://compass-style.org/reference/compass/css3/border_radius/)
+// * [Text Shadow](http://compass-style.org/reference/compass/css3/text-shadow/)
+// * [Box Shadow](http://compass-style.org/reference/compass/css3/box_shadow/)
+
+@import "compass/css3/images";
+@import "compass/css3/border-radius";
+@import "compass/css3/text-shadow";
+@import "compass/css3/box-shadow";
+
+// # Mixins
+// `@include button(#1B6AA5, white, 1em);`
+
+// ## Parameters:
+// * `background`: Background of the button;
+// * `color`: Color of the button;
+// * `font-size`: font-size of the button;
+
+@mixin button($background, $color, $font-size){
+    color: $color;
+    border: 1px solid darken($background, 20);
+    font-family: sans-serif;
+    font-size: $font-size;
+    text-decoration:none;
+    text-align: center;
+    cursor: pointer;
+    background-color: $background;
+    @include border-radius(0.4em);
+    @include background-image(linear-gradient($background, darken($background, 30)));
+    @include box-shadow(
+        0 0.1em 0.1em rgba(0, 0, 0, 0.5), 
+        inset 0 0.1em 0 rgba(255, 255, 255, 0.5)
+    );
+    display: inline-block;
+    padding: 1em;
+}
+
+// # Examples
+
+// ```
+// <a class="button">
+//     this is just an example
+// </a>
+// ```
+.button{
+	@include button(#1B6AA5, white, 1em);
+}
