@@ -15,7 +15,7 @@
 // ## Parameters:
 // * `background`: Background of the button;
 // * `color`: Color of the button;
-// * `font-size`: font-size of the button;
+// * `font-size`: Font size of the button;
 
 @mixin button($background, $color, $font-size){
     color: $color;
